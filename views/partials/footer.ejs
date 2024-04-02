@@ -19,10 +19,23 @@
     // Get the current year
     var currentYear = new Date().getFullYear();
 
-    // Set the current year in the span element
+    // Set the current year
     document.getElementById('currentYear').textContent = currentYear;
 </script>
 
+<!-- Typed browser-ready CDN -->
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+<!-- Typed script -->
+    <script>
+        var options = {
+            strings: ["Crafting Experiences ", "Designing Dreams"], // An array of strings to type
+            typeSpeed: 50, // Typing speed in milliseconds
+            loop: true // Whether to loop through the strings
+        };
+    
+        var typed = new Typed('.typed-text', options); // Initialize Typed.js on an element with the class "typed-text"
+    </script>
 <!-- Scroll to Top Button-->
 <a class="scroll-to-top rounded" href="#page-top"><i class="fas fa-angle-up"></i></a>
 <!-- Bootstrap core JS-->
