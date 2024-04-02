@@ -1,4 +1,5 @@
 require("dotenv").config();
+const port = process.env.PORT;
 const bodyParser = require("body-parser");
 const express = require("express");
 const mongoose = require("mongoose");
@@ -79,11 +80,6 @@ app.route("/contact")
         res.redirect("/contact");
     });
 
-app.listen(3000, function(){
+app.listen(port, "0.0.0.0", function(){
     console.log("Server started on port 3000");
 });
-
-//API key
-//4292a02322fab2d6f937339dd135d8c3-us21
-//Audience Id
-//e5bce3e8a9
