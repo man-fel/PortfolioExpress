@@ -1,126 +1,145 @@
 <%- include("partials/header") -%>
-<%- include("partials/footer") -%>
 
 <style>
   *,
-*:before,
-*:after{
+  *:before,
+  *:after {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Poppins",sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 500;
-}
-body{
-    height: 100vh;
-    background: linear-gradient(
-        135deg,
-        rgb(238,188,27),
-        rgb(238,188,27)
-    );
-}
-.contact-form{
+  }
+
+  body {
+    background: linear-gradient(135deg, rgb(238, 188, 27), rgb(238, 188, 27));
+    min-height: 100vh; /* Set minimum height to the viewport height */
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: flex-start; /* Start content from the top */
+    align-items: center; /* Center content horizontally */
+    padding: 20px; /* Add padding to body */
+    overflow-y: auto; /* Enable vertical scrolling */
+  }
+
+  .content {
+    flex: 1; /* Grow to fill remaining space */
+    width: 100%;
+    max-width: 500px; /* Limit the width of the content */
+  }
+
+  .contact-form {
     background-color: #ffffff;
-    width: 70%;
-    min-width: 420px;
-    padding: 35px 50px;
-    transform: translate(-50%,-50%);
-    position: absolute;
-    left: 50%;
-    top: 50%;
+    padding: 35px 50px; /* Adjust padding as needed */
+    margin-top: 50px; /* Push the form down */
     border-radius: 10px;
-    box-shadow: 20px 30px 25px rgba(0,0,0,0.15);
+    box-shadow: 20px 30px 25px rgba(0, 0, 0, 0.15);
+    margin-bottom: 40px; /* Add space between form and footer */
 }
-h1{
+
+
+  h1 {
     font-size: 30px;
     text-align: center;
     color: #1c093c;
-}
-p{
-    position: relative;
-    margin: auto;
-    width: 100%;
+  }
+
+  p {
     text-align: center;
     color: #606060;
     font-size: 14px;
     font-weight: 400;
-}
-form{
-    width: 100%;
-    position: relative;
-    margin: 30px auto 0 auto;
-}
-.row{
-    width: 100%;
+    margin-bottom: 20px; /* Add space between text and form */
+  }
+
+  form {
+    margin-top: 10px; /* Add space between form and text */
+  }
+
+  .row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 20px 30px;
     margin-bottom: 20px;
-}
-label{
+  }
+
+  label {
     color: #1c093c;
     font-size: 14px;
-}
-textarea,
-input{
+  }
+
+  textarea,
+  input {
     width: 100%;
     font-weight: 400;
     padding: 8px 10px;
     border-radius: 5px;
     border: 1.2px solid #c4cae0;
     margin-top: 5px;
-}
-textarea{
+  }
+
+  textarea {
     resize: none;
-}
-textarea:focus,
-input:focus{
+  }
+
+  textarea:focus,
+  input:focus {
     outline: none;
     border-color: #6f6df4;
-}
-button{
+  }
+
+  button {
     border: none;
     padding: 10px 20px;
-    background: linear-gradient(
-        130deg,
-        #1D809F,
-        #1D809F
-    );
+    background: linear-gradient(130deg, #1d809f, #1d809f);
     color: #ffffff;
     border-radius: 3px;
-}
+    display: block; /* Ensure button takes full width */
+    margin: 0 auto; /* Center button */
+  }
 
+  .footer {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    border-top-left-radius: 20px; /* Increase border radius */
+    border-top-right-radius: 20px; /* Increase border radius */
+  }
 </style>
-  
-<body>  
-<div class="contact-form">
-  <h1 class="h1-contacts">Sign up to my Newsletter</h1>
-  <p>Fill up the form below</p>
-  <form onsubmit="alert('Submit details?');" action="/contact" method="POST">
-      <div class="row">
+
+<body>
+  <div class="content">
+    <div class="contact-form">
+      <h1 class="h1-contacts">Sign up to my Newsletter</h1>
+      <p>Fill up the form below</p>
+      <form onsubmit="alert('Submit details?');" action="/contact" method="POST">
+        <div class="row">
           <div class="column">
-              <label for="name">First Name</label>
-              <input type="text" name="fname" id="name" placeholder="Your first name here" required autofocus>
+            <label for="name">First Name</label>
+            <input type="text" name="fname" id="name" placeholder="Your first name here" required autofocus>
           </div>
           <div class="column">
-              <label for="name">Second Name</label>
-              <input type="text" name="lname" id="name" placeholder="Your second email here" required>
+            <label for="name">Second Name</label>
+            <input type="text" name="lname" id="name" placeholder="Your second email here" required>
           </div>
-      </div>
-      <div class="row">
+        </div>
+        <div class="row">
           <div class="column">
-              <label for="email">Email</label>
-              <input type="email" name="email" id="email" placeholder="Your email here" required>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Your email here" required>
           </div>
           <div class="column">
-              <label for="contact">Contact Number</label>
-              <input type="tel" name="contact" id="contact" placeholder="Your phone number here" required>
+            <label for="contact">Contact Number</label>
+            <input type="tel" name="contact" id="contact" placeholder="Your phone number here" required>
           </div>
-      </div>
-      <button>Submit</button>
+        </div>
+        <button>Submit</button>
+      </form>
     </div>
-  </form>
+  </div>
+
+  <div class="footer">
+    <%- include("partials/footer") -%>
+  </div>
 </body>
-
-
-
