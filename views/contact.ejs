@@ -1,0 +1,126 @@
+<%- include("partials/header") -%>
+<%- include("partials/footer") -%>
+
+<style>
+  *,
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins",sans-serif;
+    font-weight: 500;
+}
+body{
+    height: 100vh;
+    background: linear-gradient(
+        135deg,
+        rgb(238,188,27),
+        rgb(238,188,27)
+    );
+}
+.contact-form{
+    background-color: #ffffff;
+    width: 70%;
+    min-width: 420px;
+    padding: 35px 50px;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border-radius: 10px;
+    box-shadow: 20px 30px 25px rgba(0,0,0,0.15);
+}
+h1{
+    font-size: 30px;
+    text-align: center;
+    color: #1c093c;
+}
+p{
+    position: relative;
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    color: #606060;
+    font-size: 14px;
+    font-weight: 400;
+}
+form{
+    width: 100%;
+    position: relative;
+    margin: 30px auto 0 auto;
+}
+.row{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    grid-gap: 20px 30px;
+    margin-bottom: 20px;
+}
+label{
+    color: #1c093c;
+    font-size: 14px;
+}
+textarea,
+input{
+    width: 100%;
+    font-weight: 400;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 1.2px solid #c4cae0;
+    margin-top: 5px;
+}
+textarea{
+    resize: none;
+}
+textarea:focus,
+input:focus{
+    outline: none;
+    border-color: #6f6df4;
+}
+button{
+    border: none;
+    padding: 10px 20px;
+    background: linear-gradient(
+        130deg,
+        #1D809F,
+        #1D809F
+    );
+    color: #ffffff;
+    border-radius: 3px;
+}
+
+</style>
+  
+<body>  
+<div class="contact-form">
+  <h1 class="h1-contacts">Sign up to my Newsletter</h1>
+  <p>Fill up the form below</p>
+  <form onsubmit="alert('Submit details?');" action="/contact" method="POST">
+      <div class="row">
+          <div class="column">
+              <label for="name">First Name</label>
+              <input type="text" name="fname" id="name" placeholder="Your first name here" required autofocus>
+          </div>
+          <div class="column">
+              <label for="name">Second Name</label>
+              <input type="text" name="lname" id="name" placeholder="Your second email here" required>
+          </div>
+      </div>
+      <div class="row">
+          <div class="column">
+              <label for="email">Email</label>
+              <input type="email" name="email" id="email" placeholder="Your email here" required>
+          </div>
+          <div class="column">
+              <label for="contact">Contact Number</label>
+              <input type="tel" name="contact" id="contact" placeholder="Your phone number here" required>
+          </div>
+      </div>
+      <button>Submit</button>
+    </div>
+  </form>
+</body>
+
+
+
