@@ -35,8 +35,7 @@
     border-radius: 10px;
     box-shadow: 20px 30px 25px rgba(0, 0, 0, 0.15);
     margin-bottom: 40px; /* Add space between form and footer */
-}
-
+  }
 
   h1 {
     font-size: 30px;
@@ -105,6 +104,13 @@
     text-align: center;
     border-top-left-radius: 20px; /* Increase border radius */
     border-top-right-radius: 20px; /* Increase border radius */
+  }
+
+  /* Media query for smaller viewports */
+  @media only screen and (max-width: 600px) {
+    .row {
+      grid-template-columns: 1fr; /* Change to single column layout */
+    }
   }
 </style>
 

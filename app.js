@@ -5,11 +5,19 @@ const express = require("express");
 const mongoose = require("mongoose");
 const ejs = require("ejs");
 const https = require("https");
-
+const session = require("express-session");
+const flash = require("connect-flash");
 const app = express();
 
 app.set('view engine', 'ejs');
 
+app.use(session({
+    secret: "secret",
+    cookie: {maxAge: 60000},
+    resave: false,
+    saveUninitialized: false
+}))
+app.use(flash());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
